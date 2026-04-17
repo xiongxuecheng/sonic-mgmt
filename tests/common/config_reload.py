@@ -180,7 +180,7 @@ def config_reload(sonic_host, config_source='config_db', wait=120, start_bgp=Tru
         sonic_host.shell('config save -y')
 
     elif config_source == 'config_db':
-        cmd = 'config reload -y &>/dev/null'
+        cmd = 'config reload  -f -y &>/dev/null'
         reloading = False
         if config_force_option_supported(sonic_host):
             if wait_before_force_reload:
@@ -189,6 +189,9 @@ def config_reload(sonic_host, config_source='config_db', wait=120, start_bgp=Tru
         if not reloading:
             time.sleep(30)
             sonic_host.shell(cmd, executable="/bin/bash")
+        time.sleep(60)
+        redistribute_cmd="sudo vtysh -c $'configure terminal\nrouter bgp 65100\naddress-family ipv4 unicast\nredistribute connected\nend' &>/dev/null"
+        sonic_host.shell(redistribute_cmd, executable="/bin/bash")
 
     elif config_source == 'running_golden_config':
         golden_path = '/etc/sonic/running_golden_config.json'
