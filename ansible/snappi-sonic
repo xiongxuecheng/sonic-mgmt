@@ -1,23 +1,24 @@
-[sonic_dell64_40]
-sonic-s6100-dut1     ansible_host=10.251.0.233
-sonic-s6100-dut2     ansible_host=10.251.0.234
+[sonic_juniper_qfx5241]
+crdc-garnet-sonic-um          ansible_host=10.207.65.111     os=sonic
 
-[sonic_dell64_40:vars]
-hwsku="Force10-S6100"
-iface_speed='40000'
+
+
+[sonic_juniper_qfx5241:vars]
+hwsku="Juniper-QFX5241-64-OD"
+iface_speed='100000'
 
 [Server_6]
-snappi-sonic          ansible_host=10.251.0.234   os=snappi
+snappi-sonic-stc          ansible_host=10.207.64.133     os=snappi
 
 [sonic:children]
-sonic_dell64_40
+sonic_juniper_qfx5241
 
 [sonic:vars]
-mgmt_subnet_mask_length='23'
+mgmt_subnet_mask_length='21'
 
 [snappi-sonic:children]
 sonic
 snappi_chassis
 
 [ptf]
-snappi-sonic-ptf     ansible_host='10.251.0.232'
+snappi-sonic-ptf     ansible_host='10.221.64.23'

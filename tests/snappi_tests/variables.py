@@ -9,27 +9,27 @@ MULTIDUT_PORT_INFO = {MULTIDUT_TESTBED: (
     ({
         'multi-dut-single-asic': {
             'rx_ports': [
-                {'port_name': 'Ethernet72', 'hostname': "sonic-s6100-dut1"},
-                {'port_name': 'Ethernet76', 'hostname': "sonic-s6100-dut1"}
+                {'port_name': 'Ethernet0', 'hostname': "crdc-garnet-sonic-ud"},
+                {'port_name': 'Ethernet1', 'hostname': "crdc-garnet-sonic-ud"}
             ],
             'tx_ports': [
-                {'port_name': 'Ethernet64', 'hostname': "sonic-s6100-dut2"},
-                {'port_name': 'Ethernet68', 'hostname': "sonic-s6100-dut2"}
+                {'port_name': 'Ethernet64', 'hostname': "crdc-garnet-sonic-um"},
+                {'port_name': 'Ethernet65', 'hostname': "crdc-garnet-sonic-um"}
             ]
         }
     }),
-    ({
-        'single-dut-single-asic': {
-            'rx_ports': [
-                {'port_name': 'Ethernet72', 'hostname': "sonic-s6100-dut1"},
-                {'port_name': 'Ethernet76', 'hostname': "sonic-s6100-dut1"}
-            ],
-            'tx_ports': [
-                {'port_name': 'Ethernet64', 'hostname': "sonic-s6100-dut1"},
-                {'port_name': 'Ethernet68', 'hostname': "sonic-s6100-dut1"}
-            ]
-        }
-    })
+    # ({
+    #     'single-dut-single-asic': {
+    #         'rx_ports': [
+    #             {'port_name': 'Ethernet72', 'hostname': "sonic-s6100-dut1"},
+    #             {'port_name': 'Ethernet76', 'hostname': "sonic-s6100-dut1"}
+    #         ],
+    #         'tx_ports': [
+    #             {'port_name': 'Ethernet64', 'hostname': "sonic-s6100-dut1"},
+    #             {'port_name': 'Ethernet68', 'hostname': "sonic-s6100-dut1"}
+    #         ]
+    #     }
+    # })
 )}
 # rx port is 400Gbps port receiving traffic in mixed-speed mode.
 # tx port is 100Gbps port sending traffic to IXIA.
@@ -37,10 +37,10 @@ MIXED_SPEED_PORT_INFO = {MULTIDUT_TESTBED: (
     ({
         'multiple-dut-any-asic': {
             'rx_ports': [
-                {'port_name': 'Ethernet0', 'hostname': "sonic-s6100-dut1"}
+                {'port_name': 'Ethernet0', 'hostname': "crdc-garnet-sonic-ud"}
             ],
             'tx_ports': [
-                {'port_name': 'Ethernet0', 'hostname': "sonic-s6100-dut2"}
+                {'port_name': 'Ethernet64', 'hostname': "crdc-garnet-sonic-um"}
             ]
         }
     })

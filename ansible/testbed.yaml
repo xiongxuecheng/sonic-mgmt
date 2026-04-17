@@ -217,30 +217,32 @@
 - conf-name: vms-snappi-sonic
   group-name: vms6-1
   topo: ptf64
-  ptf_image_name: docker-ptf-snappi
+  ptf_image_name: docker-stc-api-server
   ptf: snappi-sonic-ptf
-  ptf_ip: 10.251.0.232
+  ptf_ip: 10.221.64.23
   ptf_ipv6:
   server: Server_6
   vm_base:
   dut:
-    - sonic-s6100-dut1
+    - crdc-garnet-sonic-um
   inv_name: snappi-sonic
   auto_recover: 'True'
   comment: Batman
+  pytest_args:
+    - --skip_yang_validation
 
 - conf-name: vms-snappi-sonic-multidut
   group-name: vms6-1
   topo: ptf64
-  ptf_image_name: docker-ptf-snappi
+  ptf_image_name: docker-stc-api-server
   ptf: snappi-sonic-ptf
-  ptf_ip: 10.251.0.232
+  ptf_ip: 10.221.64.23
   ptf_ipv6:
   server: Server_6
   vm_base:
   dut:
-    - sonic-s6100-dut1
-    - sonic-s6100-dut2
+    - crdc-garnet-sonic-ud
+    - crdc-garnet-sonic-um
   inv_name: snappi-sonic
   auto_recover: 'True'
   comment: Batman
