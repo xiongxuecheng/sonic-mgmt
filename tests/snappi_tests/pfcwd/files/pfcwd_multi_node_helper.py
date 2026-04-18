@@ -521,7 +521,7 @@ def __gen_pause_flow(testbed_config,
     pkt_cnt = pps * flow_dur_sec
 
     pause_flow.rate.pps = pps
-    pause_flow.size.fixed = 64
+    pause_flow.size.fixed = 84
     pause_flow.duration.fixed_packets.packets = int(pkt_cnt)
     pause_flow.duration.fixed_packets.delay.nanoseconds = 0
     pause_flow.duration.fixed_packets.delay.nanoseconds = int(

@@ -251,7 +251,7 @@ def __gen_traffic(testbed_config,
         pause_flow_start_time = id * (pause_flow_dur_sec + pause_flow_gap_sec) + WARM_UP_TRAFFIC_DUR
 
         pause_flow.rate.pps = pause_pps
-        pause_flow.size.fixed = 64
+        pause_flow.size.fixed = 84
         pause_flow.duration.fixed_packets.packets = int(pause_pkt_cnt)
         pause_flow.duration.fixed_packets.delay.nanoseconds = int(
             sec_to_nanosec(pause_flow_start_time))

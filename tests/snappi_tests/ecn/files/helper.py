@@ -410,7 +410,7 @@ def run_ecn_test(api,
         "flow_rate_percent": None,
         "flow_rate_pps": calc_pfc_pause_flow_rate(speed_gbps),
         "flow_rate_bps": None,
-        "flow_pkt_size": 64,
+        "flow_pkt_size": 84,
         "flow_pkt_count": None,
         "flow_delay_sec": 0,
         "flow_traffic_type": traffic_flow_mode.FIXED_DURATION
@@ -857,7 +857,7 @@ def run_ecn_marking_with_pfc_quanta_variance(
             "flow_rate_percent": None,
             "flow_rate_pps": 2,
             "flow_rate_bps": None,
-            "flow_pkt_size": 64,
+            "flow_pkt_size": 84,
             "flow_pkt_count": PAUSE_FLOW_PKT_COUNT,
             "flow_delay_sec": PAUSE_FLOW_DELAY_SEC,
             "flow_traffic_type": traffic_flow_mode.FIXED_PACKETS
